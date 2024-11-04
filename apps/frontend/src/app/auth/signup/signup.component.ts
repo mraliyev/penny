@@ -10,11 +10,12 @@ import * as AuthActions from '../../store/auth/auth.actions';
 import { CommonModule } from '@angular/common';
 import { debounceTime, distinctUntilChanged, Observable } from 'rxjs';
 import { AuthState } from '../../store/auth/auth.state';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })

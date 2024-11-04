@@ -68,3 +68,12 @@ button:hover {
   margin-top: 1rem;
   font-size: 0.8rem;
 }
+
+.success-message a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.success-message a:hover {
+  color: #0056b3;
+}
