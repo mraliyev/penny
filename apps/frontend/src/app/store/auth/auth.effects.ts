@@ -63,7 +63,7 @@ export class AuthEffects {
               isRegistered: response.isRegistered,
             });
           }),
-          catchError((error) =>
+          catchError(({ error }) =>
             of(AuthActions.checkEmailExistsFailure({ error: error.message }))
           )
         )
