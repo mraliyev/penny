@@ -20,7 +20,6 @@ export class AuthEffects {
       mergeMap((action) =>
         this.authService.signin(action.email, action.password).pipe(
           map((user) => {
-            console.log({ user });
             this.authService.saveAuthState(user.accessToken);
             return AuthActions.signinSuccess({ user });
           }),
