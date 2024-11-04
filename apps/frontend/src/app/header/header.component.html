@@ -1,0 +1,15 @@
+<nav class="header">
+  <a
+    routerLink="/signin"
+    routerLinkActive="active"
+    *ngIf="(isAuthenticated$ | async) === false"
+    >Sign in</a
+  >
+  <a
+    routerLink="/signup"
+    routerLinkActive="active"
+    *ngIf="(isAuthenticated$ | async) === false"
+    >Sign up</a
+  >
+  <button *ngIf="isAuthenticated$ | async" (click)="singout()">Sign out</button>
+</nav>

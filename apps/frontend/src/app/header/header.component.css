@@ -1,0 +1,41 @@
+/* Header container styles */
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #333;
+}
+
+/* Header link styles */
+.header a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.header a.active {
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.header a:hover {
+  color: #cccccc;
+}
+
+/* Logout button styles */
+.header button {
+  color: #ffffff;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header button:hover {
+  color: #ffd700;
+  font-weight: bold;
+}

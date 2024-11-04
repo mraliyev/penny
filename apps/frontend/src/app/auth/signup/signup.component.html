@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="register-container">
+    <h2>Register</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          autocomplete="username"
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            signupForm.get('email')?.invalid && signupForm.get('email')?.touched
+          "
+        >
+          Email is required and must be valid.
+        </div>
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input
+          id="password"
+          formControlName="password"
+          type="password"
+          autocomplete="new-password"
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            signupForm.get('password')?.invalid &&
+            signupForm.get('password')?.touched
+          "
+        >
+          Password is required and must be at least 6 characters.
+        </div>
+      </div>
+      <button type="submit" [disabled]="signupForm.invalid">Register</button>
+    </form>
+    <div *ngIf="error$ | async">
+      <p class="error-message">{{ error$ | async }}</p>
+    </div>
+    <div *ngIf="successMessage$ | async as message">
+      {{ message }}
+    </div>
+    <div *ngIf="(isRegistered$ | async) === true" class="success-message">
+      You already have an account. Please
+      <a routerLink="/signin" routerLinkActive="active">Sign in</a> instead.
+    </div>
+  </div>
+</div>
